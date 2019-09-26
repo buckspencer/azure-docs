@@ -23,6 +23,20 @@ In the following code, the `style` option of the map is set to `grayscale_dark` 
 <iframe height='500' scrolling='no' title='Setting the style on map load' src='//codepen.io/azuremaps/embed/WKOQRq/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/azuremaps/pen/WKOQRq/'>Setting the style on map load</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+#### To change the style programatically on instantiation you can modify the `style` attribute
+```
+primaryMap = new atlas.Map('primaryMap', {
+                center: [-100, 35],
+                zoom: 3,
+                // Add your styling here on map creation.  
+                style: 'grayscale_dark',			
+                authOptions: {
+                    authType: 'subscriptionKey',
+                    subscriptionKey: '<Your Azure Maps Key>'
+                }
+            });
+``` 
+
 ## Update the style
 
 In the following code, after a map instance is loaded, the map style is updated from `road` to `satellite` using the [setStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) function of the map.
